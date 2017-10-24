@@ -1,8 +1,6 @@
 # SchemaExtractor
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/schema_extractor`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Extract DB schema and output as specific format.
 
 ## Installation
 
@@ -22,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```bash
+$ exe/schema_extractor --help
+usage: schema_extractor [options]
+    -s, --source    Source database type. Supported sources: mysql
+    -f, --format    Output format. Supported formats: bq, bigquery
+    -o, --output    Output directory.
+    -h, --host      Host of database.
+    -u, --user      User of database.
+    -p, --password  Password of database.
+    -P, --port      Port of database.
+    -d, --database  Database name.
+    -v, --version   Show version.
+    --help          Show this message.
+```
 
 ## Development
 
@@ -32,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/schema_extractor.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nownabe/schema_extractor.
 
 
 ## License
