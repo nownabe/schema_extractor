@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["nownabe"]
   spec.email         = ["nownabe@gmail.com"]
 
-  spec.summary       = "Extract DB schema."
+  spec.summary       = "Extract DB schema as output as specific format."
   spec.homepage      = "https://github.com/nownabe/schema_extractor"
   spec.license       = "MIT"
 
