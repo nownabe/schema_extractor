@@ -62,17 +62,17 @@ module SchemaExtractor
 
       def detect_type(row)
         case row["Type"]
-        when /^date/
+        when /^date$/
           :date
-        when /^datetime/
+        when /^datetime$/
           :datetime
-        when /^decimal/
+        when /^decimal\(\d+,\d+\)$/
           :decimal
-        when /^float/
+        when /^float$/
           :float
-        when /^bigint/, /^int/, /^smallint/, /^tinyint/
+        when /^bigint\(\d+\)$/, /^int\(\d+\)$/, /^smallint\(\d+\)$/, /^tinyint\(\d+\)$/
           :integer
-        when /^longtext/, /^text/, /^varchar/
+        when /^longtext$/, /^text$/, /^varchar\(\d+\)$/
           :string
         else
           raise UnknownFieldTypeError, "#{row['Type']} is unknown type."
