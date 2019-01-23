@@ -31,6 +31,8 @@ module SchemaExtractor
 
       def bq_type(f)
         case f.type
+        when :boolean
+          "BOOL"
         when :decimal, :float
           "FLOAT"
         when :integer

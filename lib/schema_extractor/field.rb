@@ -7,6 +7,7 @@ module SchemaExtractor
     class InvalidNullableValueError < StandardError; end
 
     TYPES = %i[
+      boolean
       date
       datetime
       decimal

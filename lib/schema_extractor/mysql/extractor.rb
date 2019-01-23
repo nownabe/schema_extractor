@@ -49,6 +49,9 @@ module SchemaExtractor
       end
 
       def detect_default_value(row)
+        if !row["Default"].nil? && detect_type(row) == :boolean
+          return row["Default"] == 0 ? false : true
+        end
         row["Default"]
       end
 
@@ -62,6 +65,8 @@ module SchemaExtractor
 
       def detect_type(row)
         case row["Type"]
+        when /^tinyint\(1\)$/
+          :boolean
         when /^date$/
           :date
         when /^datetime$/
